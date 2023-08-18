@@ -7,6 +7,7 @@ import Shop from "../pages/Shop/Shop";
 import Ranking from "../pages/Shop/Ranking";
 import Review from "../pages/Shop/Review";
 import UserPage from "../pages/UserPage/UserPage";
+import CreateReview from "../pages/Shop/CreateReview";
 
 const DefaultRouter = () => {
   return (
@@ -18,6 +19,7 @@ const DefaultRouter = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/review" element={<Review />} />
+        <Route path="/review/create" element={<CreateReview />} />
         <Route path="/UserPage" element={<UserPage />} />
       </Routes>
     </Router>
