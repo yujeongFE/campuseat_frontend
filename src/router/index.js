@@ -18,7 +18,7 @@ const DefaultRouter = () => {
         <Route path="/shop" element={<Shop />} />
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/review" element={<Review />} />
-        <Route path="/UserPage" element={<UserPage />} />
+        <Route path="/userPage" element={<UserPage />} />
       </Routes>
     </Router>
   );
