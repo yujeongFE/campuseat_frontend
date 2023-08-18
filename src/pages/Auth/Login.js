@@ -37,10 +37,10 @@ function Login(props) {
   }
 
 
-  const LoginPage = styled.div`
+const LoginPage = styled.div`
   background: linear-gradient(-50deg, #FF852D, #FFE380);
-  width: 390px;
-  height: 860px;
+  width: 100vw;
+  height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
