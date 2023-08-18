@@ -9,7 +9,7 @@ const DEFAULT_QR_CODE = "DEFAULT";
 const DEFAULT_ADDRESS = "0x00000000000000000000000000000";
 
 
-function Login(props) {
+const Login = () => {
     const [qrvalue_auth, setQrvalue_auth] = useState(DEFAULT_QR_CODE);
     const [myAddress, setMyAddress] = useState(DEFAULT_ADDRESS);
   
@@ -34,7 +34,7 @@ function Login(props) {
         </QRContainer>
       </LoginPage>
     );
-  }
+};
 
 
 const LoginPage = styled.div`
