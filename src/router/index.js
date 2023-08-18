@@ -20,7 +20,7 @@ const DefaultRouter = () => {
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/review" element={<Review />} />
         <Route path="/review/create" element={<CreateReview />} />
-        <Route path="/UserPage" element={<UserPage />} />
+        <Route path="/userPage" element={<UserPage />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,8 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 383px;
+  padding: 12px 20px;
+  background-color: #FD9B55;
+}
