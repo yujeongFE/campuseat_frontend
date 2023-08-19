@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap');
+
+.Shop{
+    background-color: #F6F6F6;
+    background-size: cover;
+    width:393px;
+    height: 2000px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Top{
+    padding-top: 20px;
+    background: linear-gradient(to bottom, #FF9040, #F6F6F6);
+    width:393px;
+}
+
+
+h1{
+    font-family: "Noto Sans KR";
+    font-weight: 13px;
+}
+
+.shopName{
+    font-size: 22px;
+    text-align: center;
+}
+
+.shopIntro{
+    font-size: 15px;
+    font-weight: 200;
+    color: #8C8C8C;
+}
+
+.running{
+    font-size: 13px;
+    color:#FF9B04;
+    font-weight: 300;
+}
+
+.closeTime{
+    color:black;
+}
+
+
+
+.Line{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
