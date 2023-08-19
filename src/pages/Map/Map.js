@@ -3,8 +3,8 @@ import { Map, MapMarker } from "react-kakao-maps-sdk";
 
 const MapScreen = () => {
   const fixedLocation = {
-    lat: 37.587211, // 고정 위도 값
-    lng: 127.029889, // 고정 경도 값
+    lat: 37.587211,
+    lng: 127.029889,
   };
 
   const [markers, setMarkers] = useState([]);
@@ -83,6 +83,7 @@ const MapScreen = () => {
         name: "이세 돈까스",
         target: "friend",
         friendid: "1",
+        shopid: "1",
         location: { lat: 37.587747, lng: 127.029424 },
       },
       {
@@ -122,6 +123,12 @@ const MapScreen = () => {
       },
     ];
     setMarkers(dummyData);
+    if (selectedCategory === category) {
+      setSelectedCategory("");
+    } else {
+      setSelectedCategory(category);
+      setMarkers(dummyData);
+    }
   };
 
   return (
@@ -130,7 +137,7 @@ const MapScreen = () => {
         className="myMap"
         style={{ width: "393px", height: "852px", zIndex: 0 }}
         center={fixedLocation}
-        level={2}
+        level={0}
       >
         <MapMarker
           position={fixedLocation}
@@ -148,21 +155,112 @@ const MapScreen = () => {
               src:
                 marker.target === "friend"
                   ? marker.friendid === "1"
-                    ? "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png" // Friend 1의 마커 이미지 URL로 변경
+                    ? "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png"
                     : marker.friendid === "2"
-                    ? "https://velog.velcdn.com/images/kkaerrung/post/da9a3071-8c28-4f0f-b716-7d59d5c3fb71/image.png" // Friend 2의 마커 이미지 URL로 변경
-                    : "" // friendid가 1 또는 2가 아닌 경우 기본값으로 설정
+                    ? "https://velog.velcdn.com/images/kkaerrung/post/da9a3071-8c28-4f0f-b716-7d59d5c3fb71/image.png"
+                    : ""
                   : marker.target === "mine"
-                  ? "https://velog.velcdn.com/images/kkaerrung/post/86be4a99-442a-4e09-b363-31c4ce31821f/image.png" // Mine 마커 이미지 URL로 변경
-                  : "", // 기본값으로 설정
+                  ? "https://velog.velcdn.com/images/kkaerrung/post/131f973e-b756-4c49-8943-6d3f1bab72e6/image.png"
+                  : "",
               size:
                 marker.target === "mine"
-                  ? new window.kakao.maps.Size(30, 35) // Mine 마커의 이미지 크기로 변경
-                  : new window.kakao.maps.Size(40, 40), // 나머지 마커의 이미지 크기
+                  ? new window.kakao.maps.Size(30, 40)
+                  : new window.kakao.maps.Size(45, 50),
             }}
           ></MapMarker>
         ))}
       </Map>
+      <div
+        style={{
+          position: "absolute",
+          top: selectedCategory === "필터" ? "650px" : "750px",
+          left: "20px",
+          zIndex: 1,
+        }}
+      >
+        <button
+          onClick={() => setSelectedCategory("필터")}
+          style={{
+            backgroundColor:
+              selectedCategory === "필터" ? "#FF852D" : "#FF5C00",
+            color: selectedCategory === "필터" ? "white" : "white",
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.)",
+            fontSize: "17px",
+            padding: "10px 20px",
+            fontWeight: 550,
+            margin: "5px",
+            border: "white",
+            borderRadius: "10px",
+            cursor: "pointer",
+          }}
+        >
+          필터
+        </button>
+        {selectedCategory === "필터" && (
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <button
+              style={{
+                width: 69,
+                height: 32,
+                backgroundColor: "white",
+                border: "none",
+                borderRadius: 5,
+                fontWeight: 700,
+                marginLeft: 5,
+                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+              }}
+              onClick={() => handleCategoryClick("중식")}
+            >
+              중식
+            </button>
+            <button
+              style={{
+                width: 69,
+                height: 32,
+                backgroundColor: "white",
+                border: "none",
+                borderRadius: 5,
+                fontWeight: 700,
+                marginLeft: 5,
+                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+              }}
+              onClick={() => handleCategoryClick("일식")}
+            >
+              일식
+            </button>
+            <button
+              style={{
+                width: 69,
+                height: 32,
+                backgroundColor: "white",
+                border: "white",
+                borderRadius: 5,
+                fontWeight: 700,
+                marginLeft: 5,
+                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+              }}
+              onClick={() => handleCategoryClick("한식")}
+            >
+              한식
+            </button>
+            <button
+              style={{
+                width: 69,
+                height: 32,
+                backgroundColor: "white",
+                border: "white",
+                borderRadius: 5,
+                fontWeight: 700,
+                marginLeft: 5,
+                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+              }}
+              onClick={() => handleCategoryClick("분식")}
+            >
+              분식
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
