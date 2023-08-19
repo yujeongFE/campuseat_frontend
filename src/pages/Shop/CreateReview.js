@@ -1,5 +1,7 @@
-import React from "react";
-
+import React ,{useState}from "react";
+import ReactRating from "react-rating";
+import  Modal from "../../components/Modal/Modal";
+import { useNavigate } from 'react-router-dom';
 const background = {
   height: '100vh',
   backgroundColor: '#eee',
@@ -14,7 +16,7 @@ const sellerName = {
   fontSize: '30px',
   fontWeight: 'bold',
   color: '#EB4F27',
-  border: '1px solid #999',
+  border: '0px solid #999',
   borderRadius: '10px',
   padding: '25px 0px',
   backgroundColor: '#fff',
@@ -25,12 +27,44 @@ const sellerName = {
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 }
 
+const sellerModalName = {
+  fontSize: '20px',
+  fontWeight: 'bold',
+  color: 'black',
+  border: '0px solid #999',
+  borderRadius: '10px',
+  padding: '25px 0px',
+  backgroundColor: '#fff',
+  width: '100%',
+  height: '2px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+}
+
+const sellerModalQuestName = {
+  fontSize: '20px',
+  fontWeight: 'bold',
+  color: 'black',
+  border: '0px solid #999',
+  borderRadius: '10px',
+  padding: '25px 0px',
+  backgroundColor: '#FFc4a3',
+  width: '100%',
+  height: '2px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+}
+
+
 const starWrapper = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   width: '100%',
-  backgroundColor: '#fff',
   marginTop: '40px',
   padding: '5px 0px',
 }
@@ -39,7 +73,7 @@ const stars = {
   display: 'flex',
   justifyContent: 'space-around',
   alignItems: 'center',
-  width: '60%',
+  width: '100%',
 }
 
 const score = {
@@ -78,7 +112,7 @@ const textareaWrapper = {
 
 const reviewText = {
   borderRadius: '10px',
-  height: '200px',
+  height: '150px',
   outline: 'none',
   border: '0px solid transparent',
   width: '100%',
@@ -94,10 +128,12 @@ const reviewImg = {
   width: '100px',
   height: '100px',
   margin: '10px',
+  display: 'flex',
+  justifyContent: 'flex-end',
 }
 
 const addImgBtn = {
-  marginTop: '20px',
+  marginTop: '50px',
   border: '4px solid transparent',
   borderImage: 'linear-gradient(45deg, #FF6D1A 0%, #FAB55F 70%, #F4DE9A 100%)',
   borderImageSlice: '1',
@@ -105,13 +141,18 @@ const addImgBtn = {
   width: '100%',
   padding: '20px',
   backgroundColor: '#fff',
-  fontSize: '25px',
+  fontSize: '18px',
   fontWeight: '400',
   color: '#EB4F27',
 }
 
+const photoInputStyle = {
+  display: 'none',
+  alignItems: 'center',
+}
+
 const bottomBtns = {
-  marginTop: '80px',
+  marginTop: '10px',
   width: '100%',
   display: 'flex',
   justifyContent: 'space-around',
@@ -120,10 +161,10 @@ const bottomBtns = {
 const cancelBtn = {
   border: 'none',
   borderRadius: '10px',
-  width: '170px',
+  width: '100px',
   padding: '20px',
   backgroundColor: '#fff',
-  fontSize: '30px',
+  fontSize: '20px',
   fontWeight: '900',
   color: '#999',
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'.replace,
@@ -132,16 +173,90 @@ const cancelBtn = {
 const submitBtn = {
   border: 'none',
   borderRadius: '10px',
-  width: '170px',
+  width: '100px',
   padding: '20px',
   backgroundColor: '#EB4F27',
-  fontSize: '30px',
+  fontSize: '20px',
   fontWeight: '900',
   color: '#fff',
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 }
 
+const cancelModalBtn = {
+  border: 'none',
+  borderRadius: '10px',
+  width: '100px',
+  padding: '20px',
+  backgroundColor: '#fff',
+  fontSize: '15px',
+  fontWeight: '900',
+  color: '#999',
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'.replace,
+}
+
+const submitModalBtn = {
+  border: 'none',
+  borderRadius: '10px',
+  width: '100px',
+  padding: '20px',
+  backgroundColor: '#EB4F27',
+  fontSize: '15px',
+  fontWeight: '900',
+  color: '#fff',
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+}
+
+const bottomPhotoBtn = {
+  marginTop: '10px',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
+
+}
+
 const CreateReview = () => {
+//사진관련
+  const [selectedImages, setSelectedImages] = useState([]);
+
+  const handleImageUpload = (event) => {
+    const selectedFiles = Array.from(event.target.files);
+    setSelectedImages(selectedFiles);
+  };
+//별점관련
+  const [data, setData] = useState({
+    id: 1,
+    name: "이세 돈까스",
+    stars: 3.0,
+  });
+  const handleStarsChange = (newStars) => {
+    setData((prevData) => ({
+      ...prevData,
+      stars: newStars,
+    }));
+  };
+
+//모달관련
+const [isModalOpen, setIsModalOpen] = useState(false);
+const [reviewContent, setReviewContent] = useState(""); // 리뷰 내용
+const openModal = () => {
+  setIsModalOpen(true);
+};
+const closeModal = () => {
+  setIsModalOpen(false);
+};
+ const handleReviewContentChange = (event) => {
+  setReviewContent(event.target.value);
+};
+const navigate = useNavigate();
+const handleComplete = () => {
+  // 리뷰 작성 완료 처리 로직
+
+  navigate('/shop');
+};
+
 
   return (
     <div style={background}>
@@ -150,11 +265,13 @@ const CreateReview = () => {
       </div>
       <div style={starWrapper}>
         <div style={stars}>
-          <img width={50} alt="뭐가 궁금해" src="/images/review-star.png" />
-          <img width={50} alt="뭐가 궁금해" src="/images/review-star.png" />
-          <img width={50} alt="뭐가 궁금해" src="/images/review-star.png" />
-          <img width={50} alt="뭐가 궁금해" src="/images/review-star-gray.png" />
-          <img width={50} alt="뭐가 궁금해" src="/images/review-star-gray.png" />
+        <ReactRating
+            initialRating={data.stars} 
+            emptySymbol={<img width={40} alt="뭐가 궁금해" src="/images/review-star-gray.png" />}
+            fullSymbol={<img width={40} alt="뭐가 궁금해" src="/images/review-star.png" />}
+           step={1}
+           onChange={handleStarsChange}
+         />
         </div>
         <p style={score}>
           {data.stars}
@@ -163,27 +280,86 @@ const CreateReview = () => {
       <div style={user}>
         <img width={80} style={userIcon} alt="뭐가 궁금해" src="/images/review-user-icon.png" />
       </div>
-      <div style={review}>
-        <div style={textareaWrapper}>
-          <textarea style={reviewText} placeholder="리뷰를 작성해주세요." />
-          <div style={imgToRight}>
-            <img width={50} style={reviewImg} alt="뭐가 궁금해" src="/images/review-food.png" />
+  
+  <div style={review}>
+  <div style={textareaWrapper}>
+  <textarea
+            style={reviewText}
+            placeholder="리뷰를 작성해주세요."
+            value={reviewContent} // 리뷰 내용 상태와 연결
+            onChange={handleReviewContentChange} // 리뷰 내용 변경 시 처리
+          />
+  </div>
+  <div style={bottomPhotoBtn}>
+    <label htmlFor="input-file" style={addImgBtn}>
+      사진 첨부하기⊕
+    </label>
+    <input
+      id="input-file"
+      type="file"
+      accept="image/png, image/jpeg"
+      placeholder="Photo"
+      onChange={handleImageUpload}
+      multiple
+      style={photoInputStyle} // 실제로 보이지 않도록 함
+    />
+    {selectedImages.map((file, index) => (
+      <div key={index}>
+        <img
+          width={50}
+          style={reviewImg}
+          alt={file.name}
+          src={URL.createObjectURL(file)} // 이미지 URL 생성
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
+<div style={bottomBtns}>
+        <button style={cancelBtn} onClick={closeModal}>
+          취소
+        </button>
+        <button style={submitBtn} onClick={openModal}>
+          작성
+        </button>
+      </div>
+
+     {isModalOpen && (
+        <Modal closeModal={closeModal}>
+            <div style={sellerModalName}>
+        {data.name}
+      </div>
+          <div style={review}>
+  <div style={textareaWrapper}>
+  <textarea
+            style={reviewText}
+            placeholder="리뷰를 작성해주세요."
+            value={reviewContent}
+            readOnly
+          />
+  </div>
+</div>
+          {selectedImages.map((file, index) => (
+            <img
+              key={index}
+              width={50}
+              style={reviewImg}
+              alt={file.name}
+              src={URL.createObjectURL(file)}
+            />
+          ))}
+          <p  style={sellerModalQuestName}>작성 완료 하시겠습니까?</p>
+          <div style={bottomBtns}>
+          <button style={cancelModalBtn} onClick={closeModal}>
+            취소
+          </button>
+          <button style={submitModalBtn} onClick={handleComplete}>작성 완료</button>
           </div>
-        </div>
-        <button style={addImgBtn}>사진 첨부하기⊕</button>
-      </div>
-      <div style={bottomBtns}>
-        <button style={cancelBtn}>취소</button>
-        <button style={submitBtn}>작성</button>
-      </div>
+        </Modal>
+      )}
     </div>
   );
 };
 
 export default CreateReview;
-
-const data = {
-  "id": 1,
-  "name": "사모님 돈까스",
-  "stars": '3.0',
-}
