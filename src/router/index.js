@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Lending from "../pages/Auth/Lending";
+import Login from "../pages/Auth/Login";
 import Main from "../pages/Main/Main";
 import Map from "../pages/Map/Map";
 import Shop from "../pages/Shop/Shop";
@@ -14,6 +15,7 @@ const DefaultRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Lending />} />
+        <Route path="/login" element={<Login />}/>
         <Route path="/main" element={<Main />} />
         <Route path="/map" element={<Map />} />
         <Route path="/shop" element={<Shop />} />
