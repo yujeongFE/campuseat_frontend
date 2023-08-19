@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
+import { useNavigate } from "react-router-dom";
 
 const MapScreen = () => {
+  const navigate = useNavigate();
+
   const fixedLocation = {
     lat: 37.587211,
     lng: 127.029889,
@@ -9,6 +12,7 @@ const MapScreen = () => {
 
   const [markers, setMarkers] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedMarker, setSelectedMarker] = useState(null);
 
   const handleCategoryClick = (category) => {
     const dummyData = [
@@ -83,7 +87,7 @@ const MapScreen = () => {
         name: "이세 돈까스",
         target: "friend",
         friendid: "1",
-        shopid: "1",
+        shopId: "1",
         location: { lat: 37.587747, lng: 127.029424 },
       },
       {
@@ -91,6 +95,7 @@ const MapScreen = () => {
         name: "한술 돈까스",
         target: "friend",
         friendid: "2",
+        shopId: "1",
         location: { lat: 37.587745, lng: 127.029423 },
       },
       {
@@ -131,6 +136,15 @@ const MapScreen = () => {
     }
   };
 
+  const handleMarkerClick = (marker) => {
+    if (marker.shopId === "1") {
+      // 클릭된 마커의 shopId 확인
+      navigate("/shop"); // /shop 페이지로 이동
+    } else {
+      setSelectedMarker(marker); // 다른 마커의 정보 표시
+    }
+  };
+
   return (
     <div style={{ position: "relative", width: "393px", height: "852px" }}>
       <Map
@@ -167,6 +181,7 @@ const MapScreen = () => {
                   ? new window.kakao.maps.Size(30, 40)
                   : new window.kakao.maps.Size(45, 50),
             }}
+            onClick={() => handleMarkerClick(marker)}
           ></MapMarker>
         ))}
       </Map>
