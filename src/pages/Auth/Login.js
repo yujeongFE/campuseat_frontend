@@ -34,7 +34,7 @@ const Login = () => {
         </QRContainer>
       </LoginPage>
     );
-};
+}
 
 
 const LoginPage = styled.div`

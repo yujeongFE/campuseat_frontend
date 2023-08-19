@@ -1,0 +1,76 @@
+.MainPage{
+    background-image: url("../../assets/image/Main/background.svg");
+    background-size: cover;
+    width:393px;
+    height: 844px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nft{
+    width:300px;
+    height: 600px;
+    margin-top: 0%;
+    margin-bottom: -10%;
+}
+
+
+/*NFT 캐러셀*/
+.swiper {
+  width: 150px;
+  height: 200px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  background-size: cover; 
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  background: linear-gradient(to bottom, #B6B8C4, #E2D3C8);
+}
+
+/*
+.swiper-slide:nth-child(1n) {
+  background-image: url("../../icon/nft1.svg");
+  background-color: rgb(209, 203, 203);
+}
+
+.swiper-slide:nth-child(2n) {
+  background-image: url("../../icon/nft2.svg");
+}
+
+.swiper-slide:nth-child(3n) {
+  background-image: url("../../icon/nft3.svg");
+}
+
+.swiper-slide:nth-child(4n) {
+  background-image: url("../../icon/nft4.svg");
+}
+
+.swiper-slide:nth-child(5n) {
+  background-image: url("../../icon/nft5.svg");
+}
+
+.swiper-slide:nth-child(6n) {
+  width: 150px;
+  height: 200px;
+}
+*/
+
+.swiper-slide:active{
+  box-shadow: 0px 5px 4px rgb(0,0,0,0.5);
+  position: relative;
+  top:2px;
+}
+
+.nftImage{
+  width: 150px;
+  height: 200px;
+}
