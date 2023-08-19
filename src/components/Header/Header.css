@@ -1,8 +1,13 @@
 .header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 383px;
   padding: 12px 20px;
-  background-color: #FD9B55;
+  background-color: transparent; /* 배경 없애기 */
+  z-index: 1000; /* 필요한 경우 다른 요소 위로 표시하기 위한 z-index 설정 */
 }
