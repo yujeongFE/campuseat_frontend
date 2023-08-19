@@ -5,7 +5,7 @@ import logoImage from "../../assets/image/Login/hamburger.svg"
 import { keyframes } from "styled-components";
 
 const background = {
-  background: 'linear-gradient(180deg, #FF6D1A 0%, #FAB55F 70%, #F4DE9A 100%)',
+  background: 'linear-gradient(-50deg, #FF852D, #FFE380)',
   height: '100vh',
   width: '100vw',
   display: 'flex',
@@ -40,7 +40,6 @@ const Lending = () => {
     <div style={background}>
       <div style={logoWrapper}>
         <img width={180} alt="뭐가 궁금해" src={logoImage} style={logoBounce}/>
-        <img width={300} alt="뭐가 궁금해" src="/images/landing-title.png" />
       </div>
     </div>
     );
