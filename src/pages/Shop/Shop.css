@@ -70,3 +70,10 @@ h1{
     padding: 10px;
     display: inline-block;
   }
+
+.StarR{
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    padding-left: 25%;
+}

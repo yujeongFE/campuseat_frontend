@@ -5,18 +5,19 @@ import clock from "../../assets/image/Shop/clock.svg";
 import nft1 from "../../assets/image/Main/nft1.svg";
 
 import MenuComponent from "../../components/Menu/MenuComponent";
+import Review from "../../components/Review/Review";
 
 const Shop = () => {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
   const [showReview, setShowReview] = useState(false);
 
   const handleMenuClick = () => {
-    setShowMenu(!showMenu);
+    setShowMenu(true); // Always show the menu when "메뉴" is clicked
     setShowReview(false);
   };
 
   const handleReviewClick = () => {
-    setShowReview(!showReview);
+    setShowReview(true); // Always show the review when "리뷰" is clicked
     setShowMenu(false);
   };
 
@@ -86,7 +87,15 @@ const Shop = () => {
         {showReview && (
           <div className="Content">
             <div className="reviewBox">
-              {/* 리뷰 */}
+                <div className="StarR">
+                <img src="images/Review/star.svg" style={{width:"25px", padding:"1px"}}></img>
+                <img src="images/Review/star.svg" style={{width:"25px", padding:"1px"}}></img>
+                <img src="images/Review/star.svg" style={{width:"25px", padding:"1px"}}></img>
+                <img src="images/Review/star.svg" style={{width:"25px", padding:"1px"}}></img>
+                <img src="images/Review/star.svg" style={{width:"25px", padding:"1px"}}></img>
+                &nbsp;&nbsp;<span style={{fontSize:"22px", fontWeight:"bold", color:"#EB4F27"}}>4.8</span>
+              </div>
+              <Review/>
             </div>
           </div>
         )}
