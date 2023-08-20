@@ -39,12 +39,14 @@ const Login = () => {
 
 const LoginPage = styled.div`
   background: linear-gradient(-50deg, #FF852D, #FFE380);
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
+  background-size: cover;
+  width:393px;
+  height: 844px;
+  margin: 0 auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 `;
 
 const Circle = styled.div`

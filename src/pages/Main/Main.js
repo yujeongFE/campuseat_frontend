@@ -13,6 +13,7 @@ const Main = () => {
   const [selectedImage, setSelectedImage] = useState(`${nft4}`);
   const [isOpen, setIsOpen] = useState(false);
 
+
   //NFT 관련
   const handleSlideClick = (imageUrl) => {
     setSelectedImage(imageUrl);
@@ -46,6 +47,9 @@ const Main = () => {
       </div>
     </div>
   );
+
+
+
 
   return (
     <>
