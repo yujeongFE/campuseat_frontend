@@ -7,9 +7,14 @@ import nft1 from "../../assets/image/Main/nft1.svg";
 import MenuComponent from "../../components/Menu/MenuComponent";
 import Review from "../../components/Review/Review";
 
+
+
 const Shop = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [showReview, setShowReview] = useState(false);
+
+  
+
 
   const handleMenuClick = () => {
     setShowMenu(true); // Always show the menu when "메뉴" is clicked

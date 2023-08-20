@@ -16,7 +16,7 @@ const Login = () => {
     const redirectToKlip = () => {
       KlipAPI.getAddress(setQrvalue_auth, async (address) => {
         setMyAddress(address);
-        window.location.href = `../main`;
+        window.location.href = `../Minting`;
       });
     };
   
