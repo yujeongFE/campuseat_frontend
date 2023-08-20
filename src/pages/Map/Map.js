@@ -146,7 +146,7 @@ const MapScreen = () => {
   };
 
   return (
-    <div style={{ position: "relative", width: "393px", height: "852px" }}>
+    <div style={{ position: "relative", width: "393px", height: "852px"  }}>
       <Map
         className="myMap"
         style={{ width: "393px", height: "852px", zIndex: 0 }}
@@ -191,6 +191,7 @@ const MapScreen = () => {
           top: selectedCategory === "필터" ? "650px" : "750px",
           left: "20px",
           zIndex: 1,
+          
         }}
       >
         <button
@@ -200,13 +201,14 @@ const MapScreen = () => {
               selectedCategory === "필터" ? "#FF852D" : "#FF5C00",
             color: selectedCategory === "필터" ? "white" : "white",
             boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.)",
-            fontSize: "17px",
-            padding: "10px 20px",
-            fontWeight: 550,
+            fontSize: "19px",
+            padding: "10px 17px",
+            fontWeight: 500,
             margin: "5px",
             border: "white",
             borderRadius: "10px",
             cursor: "pointer",
+            fontFamily: "Noto Sans KR",
           }}
         >
           필터
@@ -220,9 +222,10 @@ const MapScreen = () => {
                 backgroundColor: "white",
                 border: "none",
                 borderRadius: 5,
-                fontWeight: 700,
+                fontWeight: 500,
                 marginLeft: 5,
                 boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+                fontFamily: "Noto Sans KR",
               }}
               onClick={() => handleCategoryClick("중식")}
             >
@@ -235,9 +238,10 @@ const MapScreen = () => {
                 backgroundColor: "white",
                 border: "none",
                 borderRadius: 5,
-                fontWeight: 700,
+                fontWeight: 500,
                 marginLeft: 5,
                 boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+                fontFamily: "Noto Sans KR",
               }}
               onClick={() => handleCategoryClick("일식")}
             >
@@ -250,9 +254,10 @@ const MapScreen = () => {
                 backgroundColor: "white",
                 border: "white",
                 borderRadius: 5,
-                fontWeight: 700,
+                fontWeight: 500,
                 marginLeft: 5,
                 boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+                fontFamily: "Noto Sans KR",
               }}
               onClick={() => handleCategoryClick("한식")}
             >
@@ -265,9 +270,10 @@ const MapScreen = () => {
                 backgroundColor: "white",
                 border: "white",
                 borderRadius: 5,
-                fontWeight: 700,
+                fontWeight: 500,
                 marginLeft: 5,
                 boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+                fontFamily: "Noto Sans KR",
               }}
               onClick={() => handleCategoryClick("분식")}
             >

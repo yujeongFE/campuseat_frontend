@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import { ReactComponent as HeaderSVG } from "../../assets/Header.svg";
+//import { ReactComponent as HeaderSVG } from "../../assets/Header.svg";
 import { ReactComponent as ProfileSVG } from "../../assets/profile.svg";
 import "./UserPage.css";
 import { useState } from "react";
@@ -23,7 +23,6 @@ const UserPage = () => {
   return (
     <>
       <Header />
-      <HeaderSVG />
       <div className="profile-container">
         <ProfileSVG className="centered-svg" />
       </div>

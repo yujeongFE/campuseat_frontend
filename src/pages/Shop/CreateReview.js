@@ -2,29 +2,35 @@ import React ,{useState}from "react";
 import ReactRating from "react-rating";
 import  Modal from "../../components/Modal/Modal";
 import { useNavigate } from 'react-router-dom';
+
 const background = {
-  height: '100vh',
-  backgroundColor: '#eee',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  padding: '50px',
+  background: "#eee",
+  backgroundSize: "cover",
+  width: "393px",
+  height: "860px",
+  margin: "0 auto",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  overflow: "hidden",
+  fontFamily: "Noto Sans KR",
 }
 
 const sellerName = {
-  fontSize: '30px',
+  fontSize: '20px',
   fontWeight: 'bold',
   color: '#EB4F27',
   border: '0px solid #999',
   borderRadius: '10px',
-  padding: '25px 0px',
   backgroundColor: '#fff',
-  width: '100%',
+  marginTop: "50px",
+  width: '300px',
+  height: '56px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+  
 }
 
 const sellerModalName = {
@@ -50,13 +56,13 @@ const sellerModalQuestName = {
   border: '0px solid #999',
   borderRadius: '10px',
   padding: '25px 0px',
-  backgroundColor: '#FFc4a3',
   width: '100%',
   height: '2px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+
+  fontFamily:'Noto Sans KR'
 }
 
 
@@ -77,10 +83,12 @@ const stars = {
 }
 
 const score = {
-  marginLeft: '20px',
   fontSize: '30px',
   fontWeight: 'bold',
   color: '#EB4F27',
+  margin:"0",
+  padding:'0',
+  marginRight: '40px',
 }
 
 const user = {
@@ -90,12 +98,13 @@ const user = {
 
 const userIcon = {
   borderRadius: '50%',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+  marginLeft:"10%"
+
 }
 
 const review = {
   marginTop: '10px',
-  width: '100%',
+  width: '304px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'stretch',
@@ -116,6 +125,7 @@ const reviewText = {
   outline: 'none',
   border: '0px solid transparent',
   width: '100%',
+  textAlign:"center",
   
 }
 
@@ -134,15 +144,15 @@ const reviewImg = {
 
 const addImgBtn = {
   marginTop: '50px',
-  border: '4px solid transparent',
-  borderImage: 'linear-gradient(45deg, #FF6D1A 0%, #FAB55F 70%, #F4DE9A 100%)',
+  border: '2px solid #FF8F36',
   borderImageSlice: '1',
   borderRadius: '10px',
-  width: '100%',
-  padding: '20px',
+  width: '304px',
+  padding: '10px',
   backgroundColor: '#fff',
   fontSize: '18px',
   fontWeight: '400',
+  textAlign: 'center',
   color: '#EB4F27',
 }
 
@@ -161,19 +171,19 @@ const bottomBtns = {
 const cancelBtn = {
   border: 'none',
   borderRadius: '10px',
-  width: '100px',
+  width: '88px',
   padding: '20px',
   backgroundColor: '#fff',
   fontSize: '20px',
   fontWeight: '900',
   color: '#999',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'.replace,
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 }
 
 const submitBtn = {
   border: 'none',
   borderRadius: '10px',
-  width: '100px',
+  width: '88px',
   padding: '20px',
   backgroundColor: '#EB4F27',
   fontSize: '20px',
@@ -191,7 +201,7 @@ const cancelModalBtn = {
   fontSize: '15px',
   fontWeight: '900',
   color: '#999',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'.replace,
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 }
 
 const submitModalBtn = {
@@ -254,7 +264,7 @@ const navigate = useNavigate();
 const handleComplete = () => {
   // 리뷰 작성 완료 처리 로직
 
-  navigate('/shop');
+  navigate('/AfterReview');
 };
 
 
@@ -278,7 +288,7 @@ const handleComplete = () => {
         </p>
       </div>
       <div style={user}>
-        <img width={80} style={userIcon} alt="뭐가 궁금해" src="/images/review-user-icon.png" />
+        <img width={80} style={userIcon} alt="뭐가 궁금해" src="/images/review-user-icon.svg" />
       </div>
   
   <div style={review}>
@@ -340,21 +350,25 @@ const handleComplete = () => {
           />
   </div>
 </div>
-          {selectedImages.map((file, index) => (
-            <img
-              key={index}
-              width={50}
-              style={reviewImg}
-              alt={file.name}
-              src={URL.createObjectURL(file)}
-            />
-          ))}
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: '100%' }}>
+   
+   {selectedImages.map((file, index) => (
+     <img
+       key={index}
+       width={50}
+       style={reviewImg}
+       alt={file.name}
+       src={URL.createObjectURL(file)}
+     />
+   
+   ))}
+     </div>
           <p  style={sellerModalQuestName}>작성 완료 하시겠습니까?</p>
           <div style={bottomBtns}>
           <button style={cancelModalBtn} onClick={closeModal}>
             취소
           </button>
-          <button style={submitModalBtn} onClick={handleComplete}>작성 완료</button>
+          <button style={submitModalBtn} onClick={handleComplete}>완료</button>
           </div>
         </Modal>
       )}
