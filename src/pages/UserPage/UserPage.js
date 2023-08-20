@@ -55,6 +55,7 @@ const UserPage = () => {
               fontWeight: 700,
               marginLeft: 30,
               marginTop: 10,
+              color: "#000000",
             }}
           >
             나의 쿠폰
@@ -78,9 +79,17 @@ const UserPage = () => {
             flexDirection: "row",
             alignItems: "center",
             marginTop: 30,
+            color: "#000000",
           }}
         >
-          <span style={{ fontSize: 15, fontWeight: 700, marginLeft: 30 }}>
+          <span
+            style={{
+              fontSize: 15,
+              fontWeight: 700,
+              marginLeft: 30,
+              color: "#000000",
+            }}
+          >
             잔여 포인트
           </span>
           <span
@@ -119,7 +128,12 @@ const UserPage = () => {
           />
           <div className="white-box">
             <span
-              style={{ display: "block", textAlign: "center", fontWeight: 700 }}
+              style={{
+                display: "block",
+                textAlign: "center",
+                fontWeight: 700,
+                color: "#000000",
+              }}
             >
               <div className="text-frame">신내떡</div>
             </span>
@@ -133,7 +147,12 @@ const UserPage = () => {
           <div className="white-box">
             {" "}
             <span
-              style={{ display: "block", textAlign: "center", fontWeight: 600 }}
+              style={{
+                display: "block",
+                textAlign: "center",
+                fontWeight: 600,
+                color: "#000000",
+              }}
             >
               <div className="text-frame">버거인</div>
             </span>
@@ -146,7 +165,12 @@ const UserPage = () => {
           />
           <div className="white-box">
             <span
-              style={{ display: "block", textAlign: "center", fontWeight: 700 }}
+              style={{
+                display: "block",
+                textAlign: "center",
+                fontWeight: 700,
+                color: "#000000",
+              }}
             >
               <div className="text-frame">비일</div>
             </span>
@@ -159,7 +183,12 @@ const UserPage = () => {
           />
           <div className="white-box">
             <span
-              style={{ display: "block", textAlign: "center", fontWeight: 700 }}
+              style={{
+                display: "block",
+                textAlign: "center",
+                fontWeight: 700,
+                color: "#000000",
+              }}
             >
               <div className="text-frame">마라덕</div>
             </span>
@@ -172,7 +201,12 @@ const UserPage = () => {
           />{" "}
           <div className="white-box">
             <span
-              style={{ display: "block", textAlign: "center", fontWeight: 500 }}
+              style={{
+                display: "block",
+                textAlign: "center",
+                fontWeight: 500,
+                color: "#000000",
+              }}
             >
               <div className="text-frame">3KM</div>
             </span>
@@ -185,7 +219,12 @@ const UserPage = () => {
           />
           <div className="white-box">
             <span
-              style={{ display: "block", textAlign: "center", fontWeight: 700 }}
+              style={{
+                display: "block",
+                textAlign: "center",
+                fontWeight: 700,
+                color: "#000000",
+              }}
             >
               <div className="text-frame">춘자</div>
             </span>
