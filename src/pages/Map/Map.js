@@ -286,6 +286,7 @@ const MapScreen = () => {
             top: selectedCategory === "필터" ? "650px" : "750px",
             left: "20px",
             zIndex: 1,
+            top:"50px",
           }}
         >
           <button
@@ -301,6 +302,7 @@ const MapScreen = () => {
               margin: "5px",
               border: "white",
               borderRadius: "10px",
+
               cursor: "pointer",
             }}
           >
