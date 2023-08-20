@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import "./Main.css";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-import { EffectCards } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-cards";
+import { EffectCards } from "swiper/modules";
 import Modal from "../../components/Modal/Modal";
 
 import nft4 from "../../assets/image/Main/nft4.svg";
+import Qrcode from "../../assets/image/Main/qrcode.svg";
 
-
-
-
-const DEFAULT_QR_CODE = "DEFAULT";
-
-const Main =() => {
+const Main = () => {
   const [selectedImage, setSelectedImage] = useState(`${nft4}`);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,7 +20,7 @@ const Main =() => {
 
   //모달관련
   const handleImageClick = () => {
-    setIsOpen(true); 
+    setIsOpen(true);
   };
 
   const handleCloseModal = () => {
@@ -41,6 +37,16 @@ const Main =() => {
     "nft6.svg",
   ];
 
+  const modalContent = (
+    <div>
+      <img src={selectedImage} className="modal-nft" alt="NFT"></img>
+      <div className="additional-content">
+        <h2>추가 내용 제목</h2>
+        <p>이미지에 관한 추가 설명이나 내용을 여기에 작성하세요.</p>
+      </div>
+    </div>
+  );
+
   return (
     <div className="MainPage">
       <img
@@ -49,7 +55,7 @@ const Main =() => {
         onClick={handleImageClick} // 이미지 클릭 시 모달 열기
       ></img>
       <Swiper
-        effect={'cards'}
+        effect={"cards"}
         grabCursor={true}
         modules={[EffectCards]}
         className="mySwiper"
@@ -61,16 +67,27 @@ const Main =() => {
         }}
       >
         {slideImages.map((imageUrl, index) => (
-          <SwiperSlide key={index} onClick={() => handleSlideClick(`images/Main/${imageUrl}`)}>
+          <SwiperSlide
+            key={index}
+            onClick={() => handleSlideClick(`images/Main/${imageUrl}`)}
+          >
             <img src={`images/Main/${imageUrl}`} className="nftImage"></img>
           </SwiperSlide>
         ))}
       </Swiper>
       {isOpen && (
-        <Modal closeModal={() => handleCloseModal(setIsOpen)}></Modal>
+        <Modal closeModal={() => handleCloseModal(setIsOpen)} color="#E8E1E1">
+          <img
+            style={{ width: 281, height: 399 }}
+            src={selectedImage}
+            className="modal-nft"
+            alt="NFT"
+          ></img>
+          <img style={{ width: 100, height: 100 }} src={`${Qrcode}`} />
+        </Modal>
       )}
     </div>
   );
-}
+};
 
 export default Main;
