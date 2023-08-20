@@ -1,0 +1,79 @@
+.Shop{
+    background-color: #F6F6F6;
+    background-size: cover;
+    width:393px;
+    height: 2000px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    font-family: "Noto Sans KR";
+}
+
+.Top{
+    padding-top: 20px;
+    background: linear-gradient(to bottom, #FF9040, #F6F6F6);
+    width:393px;
+}
+
+h1{
+    font-weight: 13px;
+}
+
+.shopName{
+    font-size: 22px;
+    text-align: center;
+}
+
+.shopIntro{
+    font-size: 15px;
+    font-weight: 200;
+    color: #8C8C8C;
+}
+
+.running{
+    font-size: 13px;
+    color:#FF9B04;
+    font-weight: 300;
+}
+
+.closeTime{
+    color:black;
+}
+
+.Nft{
+    display: flex;
+    align-items: center;
+}
+
+
+.NavItem {
+    font-size: 15px;
+    margin: 0 80px;
+    color: #615959;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .NavItem:hover {
+    color: #FFAB5D;
+  }
+
+
+  .ForIntro {
+    margin-top: 15px;
+    width: 341px;
+    height: 70px;
+    border:1.4px solid #FF8A00;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+  }
+
+.StarR{
+    display: flex;
+    align-items: center;
+    padding: 10%;
+    padding-left: 25%;
+}

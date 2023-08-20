@@ -5,13 +5,10 @@ import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper/modules';
 import Modal from "../../components/Modal/Modal";
-
 import nft4 from "../../assets/image/Main/nft4.svg";
+import QRCode from "qrcode.react";
 
 
-
-
-const DEFAULT_QR_CODE = "DEFAULT";
 
 const Main =() => {
   const [selectedImage, setSelectedImage] = useState(`${nft4}`);
@@ -67,7 +64,8 @@ const Main =() => {
         ))}
       </Swiper>
       {isOpen && (
-        <Modal closeModal={() => handleCloseModal(setIsOpen)}></Modal>
+        <Modal closeModal={() => handleCloseModal(setIsOpen)}>
+        </Modal>
       )}
     </div>
   );
