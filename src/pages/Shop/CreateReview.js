@@ -2,6 +2,7 @@ import React ,{useState}from "react";
 import ReactRating from "react-rating";
 import  Modal from "../../components/Modal/Modal";
 import { useNavigate } from 'react-router-dom';
+
 const background = {
   height: '100vh',
   backgroundColor: '#eee',
@@ -10,21 +11,24 @@ const background = {
   alignItems: 'center',
   flexDirection: 'column',
   padding: '50px',
+  fontFamily: "Noto Sans KR",
 }
 
 const sellerName = {
-  fontSize: '30px',
+  fontSize: '20px',
   fontWeight: 'bold',
   color: '#EB4F27',
   border: '0px solid #999',
   borderRadius: '10px',
-  padding: '25px 0px',
   backgroundColor: '#fff',
-  width: '100%',
+  marginTop: "50px",
+  width: '300px',
+  height: '56px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+  
 }
 
 const sellerModalName = {
@@ -90,7 +94,7 @@ const user = {
 
 const userIcon = {
   borderRadius: '50%',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+
 }
 
 const review = {
@@ -134,15 +138,15 @@ const reviewImg = {
 
 const addImgBtn = {
   marginTop: '50px',
-  border: '4px solid transparent',
-  borderImage: 'linear-gradient(45deg, #FF6D1A 0%, #FAB55F 70%, #F4DE9A 100%)',
+  border: '2px solid #FF8F36',
   borderImageSlice: '1',
   borderRadius: '10px',
-  width: '100%',
-  padding: '20px',
+  width: '304px',
+  padding: '10px',
   backgroundColor: '#fff',
   fontSize: '18px',
   fontWeight: '400',
+  textAlign: 'center',
   color: '#EB4F27',
 }
 
@@ -161,7 +165,7 @@ const bottomBtns = {
 const cancelBtn = {
   border: 'none',
   borderRadius: '10px',
-  width: '100px',
+  width: '88px',
   padding: '20px',
   backgroundColor: '#fff',
   fontSize: '20px',
@@ -173,7 +177,7 @@ const cancelBtn = {
 const submitBtn = {
   border: 'none',
   borderRadius: '10px',
-  width: '100px',
+  width: '88px',
   padding: '20px',
   backgroundColor: '#EB4F27',
   fontSize: '20px',
@@ -278,7 +282,7 @@ const handleComplete = () => {
         </p>
       </div>
       <div style={user}>
-        <img width={80} style={userIcon} alt="뭐가 궁금해" src="/images/review-user-icon.png" />
+        <img width={80} style={userIcon} alt="뭐가 궁금해" src="/images/review-user-icon.svg" />
       </div>
   
   <div style={review}>
