@@ -4,13 +4,15 @@ import  Modal from "../../components/Modal/Modal";
 import { useNavigate } from 'react-router-dom';
 
 const background = {
-  height: '100vh',
-  backgroundColor: '#eee',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  padding: '50px',
+  background: "#eee",
+  backgroundSize: "cover",
+  width: "393px",
+  height: "860px",
+  margin: "0 auto",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  overflow: "hidden",
   fontFamily: "Noto Sans KR",
 }
 
@@ -54,13 +56,13 @@ const sellerModalQuestName = {
   border: '0px solid #999',
   borderRadius: '10px',
   padding: '25px 0px',
-  backgroundColor: '#FFc4a3',
   width: '100%',
   height: '2px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+
+  fontFamily:'Noto Sans KR'
 }
 
 
@@ -81,10 +83,12 @@ const stars = {
 }
 
 const score = {
-  marginLeft: '20px',
   fontSize: '30px',
   fontWeight: 'bold',
   color: '#EB4F27',
+  margin:"0",
+  padding:'0',
+
 }
 
 const user = {
@@ -94,12 +98,13 @@ const user = {
 
 const userIcon = {
   borderRadius: '50%',
+  marginLeft:"10%"
 
 }
 
 const review = {
   marginTop: '10px',
-  width: '100%',
+  width: '304px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'stretch',
@@ -258,7 +263,7 @@ const navigate = useNavigate();
 const handleComplete = () => {
   // 리뷰 작성 완료 처리 로직
 
-  navigate('/shop');
+  navigate('/AfterReview');
 };
 
 
@@ -358,7 +363,7 @@ const handleComplete = () => {
           <button style={cancelModalBtn} onClick={closeModal}>
             취소
           </button>
-          <button style={submitModalBtn} onClick={handleComplete}>작성 완료</button>
+          <button style={submitModalBtn} onClick={handleComplete}>완료</button>
           </div>
         </Modal>
       )}
