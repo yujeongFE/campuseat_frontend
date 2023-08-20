@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/Header/Header";
 
 const MapScreen = () => {
   const navigate = useNavigate();
@@ -126,6 +127,97 @@ const MapScreen = () => {
         friendid: "1",
         location: { lat: 37.585354, lng: 127.029724 },
       },
+      {
+        category: "일식",
+        name: "유토피아",
+        target: "friend",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "이요이요",
+        target: "mine",
+        friendid: "2",
+        location: { lat: 37.587748, lng: 127.0294 },
+      },
+      {
+        category: "일식",
+        name: "교꾸스시",
+        target: "friends",
+        friendid: "2",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "하나유키",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "the센다이",
+        target: "mine",
+        friendid: "2",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "호시쿠즈",
+        target: "mine",
+        friendid: "2",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "센다이 일식",
+        target: "friend",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "은행골",
+        target: "friend",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "김태완스시",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "미소야",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588052, lng: 127.028122 },
+      },
+      {
+        category: "일식",
+        name: "미소야",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588052, lng: 127.028122 },
+      },
+      {
+        category: "일식",
+        name: "미소야",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588052, lng: 127.028122 },
+      },
+      {
+        category: "일식",
+        name: "스시 호야",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588044, lng: 127.023035 },
+      },
     ];
     setMarkers(dummyData);
     if (selectedCategory === category) {
@@ -146,143 +238,141 @@ const MapScreen = () => {
   };
 
   return (
-    <div style={{ position: "relative", width: "393px", height: "852px"  }}>
-      <Map
-        className="myMap"
-        style={{ width: "393px", height: "852px", zIndex: 0 }}
-        center={fixedLocation}
-        level={0}
-      >
-        <MapMarker
-          position={fixedLocation}
-          image={{
-            src: "https://velog.velcdn.com/images/kkaerrung/post/0dcefd2b-039c-4155-94b9-c53c2a420214/image.png",
-            size: new window.kakao.maps.Size(50, 80),
-          }}
-        ></MapMarker>
-
-        {markers.map((marker, index) => (
+    <>
+      <Header />
+      <div style={{ position: "relative", width: "393px", height: "852px" }}>
+        <Map
+          className="myMap"
+          style={{ width: "393px", height: "852px", zIndex: 0 }}
+          center={fixedLocation}
+          level={0}
+        >
           <MapMarker
-            key={index}
-            position={marker.location}
+            position={fixedLocation}
             image={{
-              src:
-                marker.target === "friend"
-                  ? marker.friendid === "1"
-                    ? "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png"
-                    : marker.friendid === "2"
-                    ? "https://velog.velcdn.com/images/kkaerrung/post/da9a3071-8c28-4f0f-b716-7d59d5c3fb71/image.png"
-                    : ""
-                  : marker.target === "mine"
-                  ? "https://velog.velcdn.com/images/kkaerrung/post/131f973e-b756-4c49-8943-6d3f1bab72e6/image.png"
-                  : "",
-              size:
-                marker.target === "mine"
-                  ? new window.kakao.maps.Size(30, 40)
-                  : new window.kakao.maps.Size(45, 50),
+              src: "https://velog.velcdn.com/images/kkaerrung/post/0dcefd2b-039c-4155-94b9-c53c2a420214/image.png",
+              size: new window.kakao.maps.Size(50, 80),
             }}
-            onClick={() => handleMarkerClick(marker)}
           ></MapMarker>
-        ))}
-      </Map>
-      <div
-        style={{
-          position: "absolute",
-          top: selectedCategory === "필터" ? "650px" : "750px",
-          left: "20px",
-          zIndex: 1,
-          
-        }}
-      >
-        <button
-          onClick={() => setSelectedCategory("필터")}
+
+          {markers.map((marker, index) => (
+            <MapMarker
+              key={index}
+              position={marker.location}
+              image={{
+                src:
+                  marker.target === "friend"
+                    ? marker.friendid === "1"
+                      ? "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png"
+                      : marker.friendid === "2"
+                      ? "https://velog.velcdn.com/images/kkaerrung/post/da9a3071-8c28-4f0f-b716-7d59d5c3fb71/image.png"
+                      : "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png"
+                    : marker.target === "mine"
+                    ? "https://velog.velcdn.com/images/kkaerrung/post/131f973e-b756-4c49-8943-6d3f1bab72e6/image.png"
+                    : "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png",
+                size:
+                  marker.target === "mine"
+                    ? new window.kakao.maps.Size(30, 40)
+                    : new window.kakao.maps.Size(45, 50),
+              }}
+              onClick={() => handleMarkerClick(marker)}
+            ></MapMarker>
+          ))}
+        </Map>
+
+        <div
           style={{
-            backgroundColor:
-              selectedCategory === "필터" ? "#FF852D" : "#FF5C00",
-            color: selectedCategory === "필터" ? "white" : "white",
-            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.)",
-            fontSize: "19px",
-            padding: "10px 17px",
-            fontWeight: 500,
-            margin: "5px",
-            border: "white",
-            borderRadius: "10px",
-            cursor: "pointer",
-            fontFamily: "Noto Sans KR",
+            position: "absolute",
+            top: selectedCategory === "필터" ? "650px" : "750px",
+            left: "20px",
+            zIndex: 1,
           }}
         >
-          필터
-        </button>
-        {selectedCategory === "필터" && (
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <button
-              style={{
-                width: 69,
-                height: 32,
-                backgroundColor: "white",
-                border: "none",
-                borderRadius: 5,
-                fontWeight: 500,
-                marginLeft: 5,
-                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
-                fontFamily: "Noto Sans KR",
-              }}
-              onClick={() => handleCategoryClick("중식")}
-            >
-              중식
-            </button>
-            <button
-              style={{
-                width: 69,
-                height: 32,
-                backgroundColor: "white",
-                border: "none",
-                borderRadius: 5,
-                fontWeight: 500,
-                marginLeft: 5,
-                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
-                fontFamily: "Noto Sans KR",
-              }}
-              onClick={() => handleCategoryClick("일식")}
-            >
-              일식
-            </button>
-            <button
-              style={{
-                width: 69,
-                height: 32,
-                backgroundColor: "white",
-                border: "white",
-                borderRadius: 5,
-                fontWeight: 500,
-                marginLeft: 5,
-                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
-                fontFamily: "Noto Sans KR",
-              }}
-              onClick={() => handleCategoryClick("한식")}
-            >
-              한식
-            </button>
-            <button
-              style={{
-                width: 69,
-                height: 32,
-                backgroundColor: "white",
-                border: "white",
-                borderRadius: 5,
-                fontWeight: 500,
-                marginLeft: 5,
-                boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
-                fontFamily: "Noto Sans KR",
-              }}
-              onClick={() => handleCategoryClick("분식")}
-            >
-              분식
-            </button>
-          </div>
-        )}
+          <button
+            onClick={() => setSelectedCategory("필터")}
+            style={{
+              backgroundColor:
+                selectedCategory === "필터" ? "#FF852D" : "#FF5C00",
+              color: selectedCategory === "필터" ? "white" : "white",
+              boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.)",
+              fontSize: "17px",
+              padding: "10px 20px",
+              fontWeight: 550,
+              margin: "5px",
+              border: "white",
+              borderRadius: "10px",
+              cursor: "pointer",
+            }}
+          >
+            필터
+          </button>
+          {selectedCategory === "필터" && (
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <button
+                style={{
+                  width: 69,
+                  height: 32,
+                  backgroundColor: "white",
+                  border: "none",
+                  borderRadius: 5,
+                  fontWeight: 700,
+                  marginLeft: 5,
+                  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
+                onClick={() => handleCategoryClick("중식")}
+              >
+                중식
+              </button>
+              <button
+                style={{
+                  width: 69,
+                  height: 32,
+                  backgroundColor: "white",
+                  border: "none",
+                  borderRadius: 5,
+                  fontWeight: 700,
+                  marginLeft: 5,
+                  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
+                onClick={() => handleCategoryClick("일식")}
+              >
+                일식
+              </button>
+              <button
+                style={{
+                  width: 69,
+                  height: 32,
+                  backgroundColor: "white",
+                  border: "white",
+                  borderRadius: 5,
+                  fontWeight: 700,
+                  marginLeft: 5,
+                  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
+                onClick={() => handleCategoryClick("한식")}
+              >
+                한식
+              </button>
+              <button
+                style={{
+                  width: 69,
+                  height: 32,
+                  backgroundColor: "white",
+                  border: "white",
+                  borderRadius: 5,
+                  fontWeight: 700,
+                  marginLeft: 5,
+                  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+                }}
+                onClick={() => handleCategoryClick("분식")}
+              >
+                분식
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
