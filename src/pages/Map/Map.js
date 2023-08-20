@@ -127,6 +127,97 @@ const MapScreen = () => {
         friendid: "1",
         location: { lat: 37.585354, lng: 127.029724 },
       },
+      {
+        category: "일식",
+        name: "유토피아",
+        target: "friend",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "이요이요",
+        target: "mine",
+        friendid: "2",
+        location: { lat: 37.587748, lng: 127.0294 },
+      },
+      {
+        category: "일식",
+        name: "교꾸스시",
+        target: "friends",
+        friendid: "2",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "하나유키",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "the센다이",
+        target: "mine",
+        friendid: "2",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "호시쿠즈",
+        target: "mine",
+        friendid: "2",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "센다이 일식",
+        target: "friend",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "은행골",
+        target: "friend",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "김태완스시",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588595, lng: 127.028741 },
+      },
+      {
+        category: "일식",
+        name: "미소야",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588052, lng: 127.028122 },
+      },
+      {
+        category: "일식",
+        name: "미소야",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588052, lng: 127.028122 },
+      },
+      {
+        category: "일식",
+        name: "미소야",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588052, lng: 127.028122 },
+      },
+      {
+        category: "일식",
+        name: "스시 호야",
+        target: "friends",
+        friendid: "1",
+        location: { lat: 37.588044, lng: 127.023035 },
+      },
     ];
     setMarkers(dummyData);
     if (selectedCategory === category) {
@@ -175,10 +266,10 @@ const MapScreen = () => {
                       ? "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png"
                       : marker.friendid === "2"
                       ? "https://velog.velcdn.com/images/kkaerrung/post/da9a3071-8c28-4f0f-b716-7d59d5c3fb71/image.png"
-                      : ""
+                      : "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png"
                     : marker.target === "mine"
                     ? "https://velog.velcdn.com/images/kkaerrung/post/131f973e-b756-4c49-8943-6d3f1bab72e6/image.png"
-                    : "",
+                    : "https://velog.velcdn.com/images/kkaerrung/post/00462463-34b3-467e-a360-88f54573e539/image.png",
                 size:
                   marker.target === "mine"
                     ? new window.kakao.maps.Size(30, 40)
@@ -188,6 +279,7 @@ const MapScreen = () => {
             ></MapMarker>
           ))}
         </Map>
+
         <div
           style={{
             position: "absolute",
