@@ -1,10 +1,8 @@
 import React from "react";
-import Header from "../../components/Header/Header";
-//import { ReactComponent as HeaderSVG } from "../../assets/Header.svg";
-import { ReactComponent as ProfileSVG } from "../../assets/profile.svg";
 import "./UserPage.css";
 import { useState } from "react";
 import Modal from "./Modal";
+import Header from "../../components/Header/Header";
 
 const UserPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,10 +21,17 @@ const UserPage = () => {
   return (
     <>
       <Header />
-      <div className="profile-container">
-        <ProfileSVG className="centered-svg" />
+      <div className="orange-half-circle" style={{ zIndex: 999 }}>
+        {""}
+
+        <div className="profile-container" style={{ zIndex: 999 }}>
+          <img
+            style={{ width: 100, height: 100 }}
+            src="https://velog.velcdn.com/images/kkaerrung/post/9f656ffd-696c-4500-9f72-87603911b3b9/image.png"
+          />{" "}
+        </div>
       </div>
-      <div className="script-container">
+      <div className="script-container" style={{ marginTop: 160 }}>
         <span className="script-name">
           호돌이의 상영님
           <br />
