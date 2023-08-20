@@ -9,6 +9,11 @@ import Ranking from "../pages/Shop/Ranking";
 import Review from "../pages/Shop/Review";
 import UserPage from "../pages/UserPage/UserPage";
 import CreateReview from "../pages/Shop/CreateReview";
+import AfterEat from "../pages/Shop/AfterEat";
+import Minting from "../pages/Minting/Minting";
+import AfterReview from "../pages/Shop/AfterReview";
+
+
 
 const DefaultRouter = () => {
   return (
@@ -22,7 +27,10 @@ const DefaultRouter = () => {
         <Route path="/ranking" element={<Ranking />} />
         <Route path="/review" element={<Review />} />
         <Route path="/review/create" element={<CreateReview />} />
+        <Route path="/afterEat" element={<AfterEat />} />
+        <Route path="/afterReview" element={<AfterReview />} />
         <Route path="/userPage" element={<UserPage />} />
+        <Route path="/Minting" element={<Minting />}/>
       </Routes>
     </Router>
   );

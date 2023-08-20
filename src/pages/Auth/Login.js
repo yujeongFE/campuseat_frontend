@@ -99,5 +99,3 @@ const QRContainer = styled.div`
 `;
   
 export default Login;
-
-
