@@ -3,8 +3,23 @@ import Header from "../../components/Header/Header";
 import { ReactComponent as HeaderSVG } from "../../assets/Header.svg";
 import { ReactComponent as ProfileSVG } from "../../assets/profile.svg";
 import "./UserPage.css";
+import { useState } from "react";
+import Modal from "./Modal";
 
 const UserPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const modalImages = [
+    "https://velog.velcdn.com/images/kkaerrung/post/927b7221-53d5-480c-b3ca-490dd25dd047/image.png",
+  ];
+
   return (
     <>
       <Header />
@@ -94,7 +109,7 @@ const UserPage = () => {
             src="https://velog.velcdn.com/images/kkaerrung/post/49b36dba-72d0-47a5-803d-7e2ccd2f740d/image.png"
             style={{
               width: 80,
-              height: 33,
+              height: 40,
               left: 10,
             }}
           />
@@ -109,7 +124,7 @@ const UserPage = () => {
         <div className="image-container">
           <img
             src="https://velog.velcdn.com/images/kkaerrung/post/442ac780-38a0-4ce7-bdde-d1cf43234338/image.png"
-            style={{ width: 80, height: 33, left: 10 }}
+            style={{ width: 80, height: 40, left: 10 }}
           />
           <div className="white-box">
             {" "}
@@ -123,7 +138,7 @@ const UserPage = () => {
         <div className="image-container">
           <img
             src="https://velog.velcdn.com/images/kkaerrung/post/cf4b8edc-5bd2-467e-bfe0-242d4ad84cdd/image.png"
-            style={{ width: 80, height: 33, left: 10 }}
+            style={{ width: 80, height: 40, left: 10 }}
           />
           <div className="white-box">
             <span
@@ -136,7 +151,7 @@ const UserPage = () => {
         <div className="image-container">
           <img
             src="https://velog.velcdn.com/images/kkaerrung/post/f3616b15-4fac-4bb2-bf4e-391f27305ced/image.png"
-            style={{ width: 80, height: 33, left: 10 }}
+            style={{ width: 80, height: 40, left: 10 }}
           />
           <div className="white-box">
             <span
@@ -149,7 +164,7 @@ const UserPage = () => {
         <div className="image-container">
           <img
             src="https://velog.velcdn.com/images/kkaerrung/post/68cc871e-5d51-4ae8-887e-12f7d1556350/image.png"
-            style={{ width: 80, height: 33, left: 10 }}
+            style={{ width: 80, height: 40, left: 10 }}
           />{" "}
           <div className="white-box">
             <span
@@ -162,7 +177,7 @@ const UserPage = () => {
         <div className="image-container">
           <img
             src="https://velog.velcdn.com/images/kkaerrung/post/69e5ff99-3f07-41c2-980c-a376491f4870/image.png"
-            style={{ width: 80, height: 33, left: 10 }}
+            style={{ width: 80, height: 40, left: 10 }}
           />
           <div className="white-box">
             <span
@@ -222,8 +237,9 @@ const UserPage = () => {
                 maxHeight: 104,
               }}
               alt="신내떡"
+              onClick={() => openModal()}
             />
-            신내떡 <span style={{ color: "#FF6D1A" }}>7개</span>
+            신내떡 <span style={{ color: "#FF6D1A" }}>6개</span>
           </div>
           <div
             className="image-wrapper"
@@ -244,11 +260,17 @@ const UserPage = () => {
                 maxHeight: 104,
               }}
               alt="현고대 닭발"
+              onClick={() => openModal()}
             />
             현고대 닭발 <span style={{ color: "#FF6D1A" }}>7개</span>
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        modalImages={modalImages}
+      />
     </>
   );
 };
