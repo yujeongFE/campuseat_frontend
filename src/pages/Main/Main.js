@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
 import Modal from "../../components/Modal/Modal";
-
+import Header from "../../components/Header/Header";
 import nft4 from "../../assets/image/Main/nft4.svg";
 import Qrcode from "../../assets/image/Main/qrcode.svg";
 
@@ -48,45 +48,48 @@ const Main = () => {
   );
 
   return (
-    <div className="MainPage">
-      <img
-        src={selectedImage}
-        className="nft"
-        onClick={handleImageClick} // 이미지 클릭 시 모달 열기
-      ></img>
-      <Swiper
-        effect={"cards"}
-        grabCursor={true}
-        modules={[EffectCards]}
-        className="mySwiper"
-        cardsEffect={{
-          perSlideOffset: 40,
-          perSlideRotate: 10,
-          rotate: true,
-          slideShadows: false,
-        }}
-      >
-        {slideImages.map((imageUrl, index) => (
-          <SwiperSlide
-            key={index}
-            onClick={() => handleSlideClick(`images/Main/${imageUrl}`)}
-          >
-            <img src={`images/Main/${imageUrl}`} className="nftImage"></img>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      {isOpen && (
-        <Modal closeModal={() => handleCloseModal(setIsOpen)} color="#E8E1E1">
-          <img
-            style={{ width: 281, height: 399 }}
-            src={selectedImage}
-            className="modal-nft"
-            alt="NFT"
-          ></img>
-          <img style={{ width: 100, height: 100 }} src={`${Qrcode}`} />
-        </Modal>
-      )}
-    </div>
+    <>
+      <Header />
+      <div className="MainPage">
+        <img
+          src={selectedImage}
+          className="nft"
+          onClick={handleImageClick} // 이미지 클릭 시 모달 열기
+        ></img>
+        <Swiper
+          effect={"cards"}
+          grabCursor={true}
+          modules={[EffectCards]}
+          className="mySwiper"
+          cardsEffect={{
+            perSlideOffset: 40,
+            perSlideRotate: 10,
+            rotate: true,
+            slideShadows: false,
+          }}
+        >
+          {slideImages.map((imageUrl, index) => (
+            <SwiperSlide
+              key={index}
+              onClick={() => handleSlideClick(`images/Main/${imageUrl}`)}
+            >
+              <img src={`images/Main/${imageUrl}`} className="nftImage"></img>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {isOpen && (
+          <Modal closeModal={() => handleCloseModal(setIsOpen)} color="#E8E1E1">
+            <img
+              style={{ width: 281, height: 399 }}
+              src={selectedImage}
+              className="modal-nft"
+              alt="NFT"
+            ></img>
+            <img style={{ width: 100, height: 100 }} src={`${Qrcode}`} />
+          </Modal>
+        )}
+      </div>
+    </>
   );
 };
 
