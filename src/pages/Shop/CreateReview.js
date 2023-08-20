@@ -88,7 +88,7 @@ const score = {
   color: '#EB4F27',
   margin:"0",
   padding:'0',
-
+  marginRight: '40px',
 }
 
 const user = {
@@ -125,6 +125,7 @@ const reviewText = {
   outline: 'none',
   border: '0px solid transparent',
   width: '100%',
+  textAlign:"center",
   
 }
 
@@ -176,7 +177,7 @@ const cancelBtn = {
   fontSize: '20px',
   fontWeight: '900',
   color: '#999',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'.replace,
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 }
 
 const submitBtn = {
@@ -200,7 +201,7 @@ const cancelModalBtn = {
   fontSize: '15px',
   fontWeight: '900',
   color: '#999',
-  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'.replace,
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 }
 
 const submitModalBtn = {
@@ -349,15 +350,19 @@ const handleComplete = () => {
           />
   </div>
 </div>
-          {selectedImages.map((file, index) => (
-            <img
-              key={index}
-              width={50}
-              style={reviewImg}
-              alt={file.name}
-              src={URL.createObjectURL(file)}
-            />
-          ))}
+<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: '100%' }}>
+   
+   {selectedImages.map((file, index) => (
+     <img
+       key={index}
+       width={50}
+       style={reviewImg}
+       alt={file.name}
+       src={URL.createObjectURL(file)}
+     />
+   
+   ))}
+     </div>
           <p  style={sellerModalQuestName}>작성 완료 하시겠습니까?</p>
           <div style={bottomBtns}>
           <button style={cancelModalBtn} onClick={closeModal}>
