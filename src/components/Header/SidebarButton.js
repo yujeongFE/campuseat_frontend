@@ -6,12 +6,27 @@ import { ReactComponent as MyPageSVG } from "../../assets/mypageicon.svg";
 import { ReactComponent as MapIconSVG } from "../../assets/mapicon.svg";
 import { ReactComponent as ShopIconSVG } from "../../assets/shopicon.svg";
 import { ReactComponent as RankingIconSVG } from "../../assets/rankingicon.svg";
-import { ReactComponent as ProfileIconSVG } from "../../assets/profile.svg";
+import Modal from "../Modal/Modal";
+import nft4 from "../../assets/image/Main/nft4.svg";
+import Qrcode from "../../assets/image/Main/qrcode.svg";
+
 const SidebarButton = ({ width = 280, children }) => {
   const [isOpen, setOpen] = useState(false);
   const [xPosition, setX] = useState(-280);
+  const [isModalOpen, setIsModalOpen] = useState(false); // 모달의 상태 추가
+  const modalImages = [
+    "https://velog.velcdn.com/images/kkaerrung/post/9f656ffd-696c-4500-9f72-87603911b3b9/image.png",
+  ];
   const side = useRef();
   const navigate = useNavigate();
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   // button 클릭 시 토글
   const toggleMenu = () => {
@@ -150,15 +165,48 @@ const SidebarButton = ({ width = 280, children }) => {
                 bottom: 20,
               }}
             >
-              <ProfileIconSVG
+              <img
+                src="https://velog.velcdn.com/images/kkaerrung/post/9f656ffd-696c-4500-9f72-87603911b3b9/image.png"
                 style={{
+                  width: 129,
+                  height: 129,
                   filter: "drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.6))",
                 }}
+                onClick={openModal}
               />
             </div>
           </div>
         </div>
       </div>
+      {isModalOpen && (
+        <Modal
+          isOpen={isModalOpen}
+          closeModal={closeModal}
+          modalImages={modalImages}
+          color="#E8E1E1"
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={`${nft4}`}
+              style={{ width: 281, height: 399 }}
+              className="nftImage"
+              alt="NFT Image 1"
+            />
+            <img
+              src={`${Qrcode}`}
+              style={{ width: 100, height: 100 }}
+              className="nftImage"
+              alt="QR Code"
+            />
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };
