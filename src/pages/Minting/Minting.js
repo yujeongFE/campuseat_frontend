@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Minting.css';
 import Modal from './Modal';
 
@@ -10,10 +10,49 @@ const schools = [
 ]
 
 const Minting = () =>{
-  const [search, setSearch] = useState(''); //검색
+  const [search, setSearch] = useState('');
   const [filteredSchools, setFilteredSchools] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [mintingMessage, setMintingMessage] = useState('');
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScrollAnimation = () => {
+    const elementsToAnimate = [
+        document.querySelector('.randomNFT'),
+        ...document.querySelectorAll('.Min'),
+        document.querySelector('.HamburgerImage'),
+        document.querySelector('.nfts') // .nfts 요소 추가
+      ];
+    
+      elementsToAnimate.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top + scrollPosition;
+        if (elementTop < window.innerHeight) {
+          element.classList.add('visible');
+        } else {
+          element.classList.remove('visible');
+        }
+      });
+    };
+    
+
+
+  
+
+
+
+
+  useEffect(() => {
+
+
+    handleScrollAnimation();
+
+    window.addEventListener('scroll', handleScrollAnimation);
+    return () => {
+      window.removeEventListener('scroll', handleScrollAnimation);
+    };
+  }, []);
+
+  
 
 
   //학교선택창
@@ -56,8 +95,7 @@ const Minting = () =>{
   return (
     <div className="MintingPage">
 
-    <h1 className='Min' 
-    style={{fontSize:"18px"}}>대학가 멤버십 서비스<br/>
+    <h1 className='Min' style={{fontSize:"18px"}}>대학가 멤버십 서비스<br/>
         <span>캠잇</span></h1>
 
 
@@ -66,13 +104,7 @@ const Minting = () =>{
         <h1 className="Min" style={{fontSize:"14px", marginBottom:"10px"}}>
             NFT 소유자 모두 <span>다른 디자인</span>의<br/>
         <span>랜덤 NFT</span>를 가질 수 있어요</h1>
-      <div className='NFT'>
-        <img src="/images/Minting/nft1.svg" className='nft1'></img>
-        <img src="/images/Minting/nft2.svg" className='nft2'></img>
-        <img src="/images/Minting/nft3.svg" classNamse='nft3'></img>
-        <img src="/images/Minting/nft4.svg" className='nft4'></img>
-        <img src="/images/Minting/nft5.svg" className='nft5'></img>
-      </div>
+        <img src="./images/Minting/nfts.svg" className='nfts' style={{width:"310px", height:"305px", marginTop:"50px"}}></img>
       <h1 className="Min" style={{marginLeft:"0px", marginTop:"200px", textAlign:"center", fontSize:"18px"}}>나만의 <span>NFT</span>를 발급하고<br/>
       <span>대학가 특별할인</span>을 받으세요</h1>
 
