@@ -1,0 +1,112 @@
+/* UserPage.css */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -80px;
+}
+
+.centered-svg {
+    max-width: 100%; 
+    max-height: 100%;
+}
+
+.script-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 7vh;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.script-name { 
+    color: #FF852D;
+    font-size: 17px;
+    margin-bottom: 5px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100%;
+    letter-spacing: -0.4px;
+}
+
+.script-scripts {
+    color: #2D2D2D;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.4px;
+}
+
+.line-box { 
+    width: 100%; /* 변경된 부분 */
+    max-width: 318px; /* 추가된 부분 */
+    height: 90px; 
+    margin: auto; 
+    border: 2px groove transparent;
+    border-image: linear-gradient(45deg, #FF6D1A 0%, #FAB55F 70%, #F4DE9A 100%);
+    border-image-slice: 1;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.line-boxes1 { 
+    width: 100%; /* 변경된 부분 */
+    max-width: 330px; /* 추가된 부분 */
+    height: 200px; 
+    margin: auto; 
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    border: 2px groove transparent;
+    border-image: linear-gradient(45deg, #FF6D1A 0%, #FAB55F 70%, #F4DE9A 100%);
+    border-image-slice: 1;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    align-items: center; /* 수정된 부분 */
+    margin-left: 13px;
+}
+
+.white-box {
+    width: 80px;
+    height: 50px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.3); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: -10px;
+}
+
+.text-frame {
+    display: inline-block;
+    background-color: #f9a50a;
+    border: 2px solid #f9be0a;
+    border-radius: 20px;
+    padding: 5px;
+    width: 60px; 
+    height: 13px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper {
+    padding: 20px;
+    border: 2px solid #ffffff;
+    display: inline-block;
+    margin: 5px;
+    box-shadow: 1px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding-bottom: 5px;
+}
