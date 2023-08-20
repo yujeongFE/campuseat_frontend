@@ -27,7 +27,7 @@ const Login = () => {
         <CamEat>&nbsp;CAMPUS<br />EAT</CamEat>
         <Button onClick={redirectToKlip}>
           <img src={klipIcon} className="klipIcon" />
-          클립으로 로그인
+          클립으로 로그인.
         </Button>
         <QRContainer>
           {qrvalue_auth !== DEFAULT_QR_CODE && <QRCode value={qrvalue_auth} />}
@@ -45,7 +45,6 @@ const LoginPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Noto Sans KR;
 `;
 
 const Circle = styled.div`
@@ -100,5 +99,3 @@ const QRContainer = styled.div`
 `;
   
 export default Login;
-
-

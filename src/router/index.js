@@ -10,7 +10,6 @@ import Review from "../pages/Shop/Review";
 import UserPage from "../pages/UserPage/UserPage";
 import CreateReview from "../pages/Shop/CreateReview";
 import AfterEat from "../pages/Shop/AfterEat";
-import Minting from "../pages/Minting/Minting";
 
 
 
@@ -28,7 +27,6 @@ const DefaultRouter = () => {
         <Route path="/review/create" element={<CreateReview />} />
         <Route path="/afterEat" element={<AfterEat />} />
         <Route path="/userPage" element={<UserPage />} />
-        <Route path="/minting" element={<Minting/>}/>
       </Routes>
     </Router>
   );
