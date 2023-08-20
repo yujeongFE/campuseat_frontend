@@ -21,7 +21,7 @@ const Minting = () =>{
         document.querySelector('.randomNFT'),
         ...document.querySelectorAll('.Min'),
         document.querySelector('.HamburgerImage'),
-        document.querySelector('.nfts') // .nfts 요소 추가
+        document.querySelector('.nfts')
       ];
     
       elementsToAnimate.forEach((element) => {
@@ -35,15 +35,7 @@ const Minting = () =>{
     };
     
 
-
-  
-
-
-
-
   useEffect(() => {
-
-
     handleScrollAnimation();
 
     window.addEventListener('scroll', handleScrollAnimation);
@@ -135,9 +127,13 @@ const Minting = () =>{
 
       <button className={`MintingButton ${search !== null ? 'ClickMinting' : ''}`} 
         onClick={clickMinting}>민팅하기</button>
-      {modalOpen && (
-        <Modal message={mintingMessage} onClose={closeModal} onCancel={cancelModal} />
-      )}
+        {modalOpen && (
+        <Modal
+            message={mintingMessage}
+            onCancel={cancelModal}
+            isSearchEmpty={search === ''} // isSearchEmpty 프롭 전달
+        />
+        )}
 
     </div>
   );

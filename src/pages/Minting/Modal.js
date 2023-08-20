@@ -38,22 +38,25 @@ const ModalContent = styled.div`
 
 `;
 
-function Modal({ message, onCancel }) {
-    const GotoKlip = () => {
-      const KlipUrl = encodeURIComponent('https://klipwallet.com/');
-      const KlipDeepLink = `kakaotalk://klipwallet/open?url=${KlipUrl}`;
-      window.location.href = KlipDeepLink;
+function Modal({ message, isSearchEmpty, onCancel }) {
+    const GotoMain = () => {
+      window.location.href = "/main";
     };
   
     return (
-      <ModalOverlay>
-        <ModalContent>
-          <p style={{ fontWeight: "500" }}>{message}</p>
-          <button onClick={GotoKlip}>민팅하기</button>
-          <button onClick={onCancel}>다시선택</button>
-        </ModalContent>
-      </ModalOverlay>
-    );
-  }
-  
-  export default Modal;
+        <ModalOverlay>
+          <ModalContent>
+            <p style={{ fontWeight: "500" }}>{message}</p>
+            <button
+              onClick={GotoMain}
+              disabled={isSearchEmpty} // 검색이 비어있을 때 버튼 비활성화
+            >
+              민팅하기
+            </button>
+            <button onClick={onCancel}>다시선택</button>
+          </ModalContent>
+        </ModalOverlay>
+      );
+    }
+    
+    export default Modal;

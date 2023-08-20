@@ -132,7 +132,7 @@ const SidebarButton = ({ width = 280, children }) => {
             </div>
 
             <div
-              onClick={() => navigate("/ranking")}
+              onClick={() => navigate("/Ranking")}
               className="icon-container"
               style={{ marginTop: "38px" }}
             >
@@ -141,7 +141,7 @@ const SidebarButton = ({ width = 280, children }) => {
                   filter: "drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.4))",
                 }}
               />
-              <span className={styles.iconText}>랭킹</span>
+              <span className={styles.iconText}>민팅</span>
             </div>
 
             <div
