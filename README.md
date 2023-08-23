@@ -67,14 +67,15 @@ NFT를 활용하여, 대학가 상점 멤버십 서비스를 ReactJS를 사용�
 ### 멤버십 상점 리뷰
 - 리뷰 작성, 등록 기능 구현
 <p>
-      <img src="https://github.com/CampusEat/campuseat_frontend/assets/109844803/d8f041c3-1a58-4c9b-b7f0-6789768f05a5f" alt="image" width="270" height="500" />
+      <img src="https://github.com/yujeongFE/campuseat_frontend/assets/109844803/442047ff-8960-4630-aa88-42ec16e70242" alt="image" width="800" height="500" />
     </p>
 
 ### 마이페이지 
 - 가게별 스템프 저장, 확인 기능 구현
 <p>
-      <img src="https://github.com/CampusEat/campuseat_frontend/assets/109844803/e70f1475-543b-40da-8bf3-2f4370725762" alt="image" width="500" height="500" />
+      <img src="https://github.com/yujeongFE/campuseat_frontend/assets/109844803/71a65fa0-08a2-4010-aec2-0e80fe265c3c" alt="image" width="500" height="500" />
     </p>
+
 
 
 
