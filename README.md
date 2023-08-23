@@ -35,7 +35,7 @@ NFT를 활용하여, 대학가 상점 멤버십 서비스를 ReactJS를 사용�
     </p>
 
 ### 민팅 페이지 
-- 학교 검색시 자동 완성 기능
+- 학교 검색 시 자동 완성 기능 구현 
  <p>
       <img src="https://github.com/yujeongFE/campuseat_frontend/assets/109844803/f56e4137-486f-43bf-9c13-b79fc93c3b17" alt="image" width="270" height="800" />
     </p>
@@ -49,7 +49,7 @@ NFT를 활용하여, 대학가 상점 멤버십 서비스를 ReactJS를 사용�
 
   
 ### 메인 페이지  
-- NFT 이미지 목록을 carousel 슬라이드로 구현
+- NFT 이미지 목록을 슬라이드로 구현
 - NFT 클릭 시, 멤버쉽 정보를 담은 카드 형태 모달 구현
  <p>
       <img src="https://github.com/CampusEat/campuseat_frontend/assets/109844803/187a4c12-9de9-47af-977d-929a31e35276" alt="image" width="500" height="500" />
