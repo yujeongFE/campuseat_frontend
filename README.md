@@ -34,6 +34,12 @@ NFT를 활용하여, 대학가 상점 멤버십 서비스를 ReactJS를 사용�
       <img src="https://github.com/CampusEat/campuseat_frontend/assets/109844803/60601c1b-c7dd-40d1-bca4-510a705e77c8" alt="image" width="270" height="500" />
     </p>
 
+### 민팅 페이지 
+- 학교 검색시 자동 완성 기능
+ <p>
+      <img src="https://github.com/yujeongFE/campuseat_frontend/assets/109844803/f56e4137-486f-43bf-9c13-b79fc93c3b17" alt="image" width="270" height="800" />
+    </p>
+
 ### 헤더 
 - 사이드 바를 활용한 네비게이션 기능 구현
 -  컴포넌트 내에서 바로 앞 페이지로 뒤로가기 기능 구현
